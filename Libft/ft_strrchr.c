@@ -1,41 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 11:51:23 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/22 13:36:25 by juan-jos         ###   ########.fr       */
+/*   Created: 2026/09/22 14:56:12 by juan-jos          #+#    #+#             */
+/*   Updated: 2026/09/22 15:07:51 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *) s;
-	while (0 < n)
-	{
-		*ptr = 0;
-		n--;
-		ptr++;
-	}
+    
 }
-
-/*#include <stdio.h>
-
-int main()
-{
-	unsigned char	a[] = "holas mun";
-
-	printf("%s\n", a);
-
-	ft_bzero(a, 6);
-
-	printf("%s\n", a);
-
-	return (0);
-}*/
