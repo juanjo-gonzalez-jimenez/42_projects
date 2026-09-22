@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-jos <juan-jos@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 16:45:48 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/07/06 12:03:43 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/22 15:47:57 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 	int				result;

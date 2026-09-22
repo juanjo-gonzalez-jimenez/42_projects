@@ -6,11 +6,12 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 14:56:12 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/22 15:07:51 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/22 15:14:45 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
-{
-    
+{   
 }

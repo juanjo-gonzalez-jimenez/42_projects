@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-jos <juan-jos@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 15:06:34 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/16 15:44:28 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/22 15:24:31 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 	{
@@ -21,7 +21,7 @@ int	isalpha(int c)
 
 /*#include <stdio.h>
 
-int main()
+int	main(void)
 {
 	printf("%d", isalpha(93));
 }*/

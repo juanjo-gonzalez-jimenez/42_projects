@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-jos <juan-jos@student.42malaga.c      +#+  +:+       +#+        */
+/*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 12:04:06 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/08 12:09:50 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/22 15:31:56 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }
@@ -23,9 +25,9 @@ int	ft_strlen(char *str)
 
 int main()
 {
-	int i;
+	size_t i;
 
 	i = ft_strlen("hola");
 
-	printf ("%d", i);
+	printf ("%zu", i);
 }*/
