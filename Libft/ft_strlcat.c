@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 10:41:13 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/22 15:46:28 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/22 18:22:57 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	dest_len = 0;
 	src_len = 0;
-	while (dst[dest_len] != '\0')
+	while (dst[dest_len] != '\0' && dest_len < size)
 		dest_len++;
 	while (src[src_len] != '\0')
 		src_len++;
@@ -37,15 +37,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dest_len + i] = '\0';
 	return (dest_len + src_len);
 }
-
-/*int	main(void)
+/*#include <stdio.h>
+int	main(void)
 {
 	char src[] = "Malaga";
-	char dest[5] = "Hola ";
+	char dest[20] = "Hola ";
 	size_t result;
 
-	result = ft_strlcat (dest, src, 11);
-	printf ("%s\n", dest);
-	//printf ("%u\n", result);
-
+	result = ft_strlcat (dest, src, 20);
+	printf ("%zu\n", result);
 }*/

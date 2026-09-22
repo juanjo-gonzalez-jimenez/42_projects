@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/30 16:45:48 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/22 17:43:18 by juan-jos         ###   ########.fr       */
+/*   Created: 2026/09/22 17:44:05 by juan-jos          #+#    #+#             */
+/*   Updated: 2026/09/22 17:58:55 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	const unsigned char *ptr;
+	unsigned char cc;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while ((i < n - 1) && (s1[i] == s2[i]) && (s1[i] != '\0'))
+	ptr = (const unsigned char *)s;
+	cc = (unsigned char)c;
+	while (n > 0)
 	{
-		i++;
+		if (*ptr == cc)
+		{
+			return ((void *)ptr);
+		}
+		n--;
+		ptr++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (NULL);
 }
-/*#include <stdio.h>
-int main(void)
-{
-	char string1[] = "hola";
-	char string2[] = "hole munde";
-
-	printf ("%d\n", ft_strncmp(string1, string2, 10));
-	return (0);
-}*/
