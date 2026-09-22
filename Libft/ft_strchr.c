@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 09:59:44 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/22 14:55:37 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/22 17:08:25 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	main(void)
 	const char *s = "hola mundo";
 	char *result;
 
-	result = ft_strchr(s, 'm');
+	result = ft_strchr(s, 'o');
 	printf("%s", result);
 }*/
