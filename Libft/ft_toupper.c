@@ -6,20 +6,18 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 19:47:12 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/22 09:58:13 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/23 14:24:13 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        c = c - 32;
-    return (c);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }
-
 /*#include <stdio.h>
-
-int main()
+int	main(void)
 {
-    printf ("%d", ft_toupper(45));
+	printf ("%d", ft_toupper(45));
 }*/

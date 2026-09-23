@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 09:48:01 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/23 14:24:43 by juan-jos         ###   ########.fr       */
+/*   Created: 2026/09/23 14:27:28 by juan-jos          #+#    #+#             */
+/*   Updated: 2026/09/23 15:53:14 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int	atoi(const char *nptr)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+	int	i;
+	int	mincount;
+	int	c;
+
+	i = 0;
+	mincount = 1;
+	c = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+	{
+		i++;
+	}
+	if (nptr[i] == 43 || nptr[i] == 45)
+	{
+		if (nptr[i] == 45)
+		{
+			mincount = -1;
+		}
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		c = (c * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (c * mincount);
 }

@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 18:45:16 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/23 12:00:33 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/23 13:57:11 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int ft_memcmp(const void *s1, const void *s2, size_t n);
-char    *ft_strnstr(const char *big, const char *little, size_t len);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif
