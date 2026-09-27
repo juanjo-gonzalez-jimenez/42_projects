@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:59:32 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/25 18:02:34 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/27 10:45:53 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,62 @@ static int	ft_word_count(char const *s, char c)
 		}
 		i++;
 	}
-    return (word_count);
+	return (word_count);
 }
 
-static int  ft_word_len(char const *s, char c)
+static int	ft_word_len(char const *s, char c)
 {
-    int i;
-    
-    i = 0;
-    while (s[i] != c && s[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	int	i;
+
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
+
+static char	**ft_free_split(char **s_ptr, int j)
+{
+	while (j > 0)
+	{
+		j--;
+		free(s_ptr[j]);
+	}
+	free(s_ptr);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-    char *ptr;
-    int counter;
-    int word_len;
-    int i;
+	char	*ptr;
+	char	**s_ptr;
+	int		counter;
+	int		word_len;
+	int		i;
+	int		j;
 
-    i = 0;
-    word_len = 0;
-    counter = ft_word_count(s, c);
-    while (counter > 0)
-    {
-        while (s[i] == c)
-            i++;
-        word_len = ft_word_len(s + i, c);
-        ptr = malloc(sizeof(char) * word_len + 1);
-    }
+	j = 0;
+	i = 0;
+	word_len = 0;
+	counter = ft_word_count(s, c);
+	s_ptr = malloc(sizeof(char *) * (counter + 1));
+	if (!s_ptr)
+		return (NULL);
+	while (j < counter)
+	{
+		while (s[i] == c)
+			i++;
+		word_len = ft_word_len(s + i, c);
+		ptr = malloc(sizeof(char) * (word_len + 1));
+		if (!ptr)
+			return (ft_free_split(s_ptr, j));
+		ft_memcpy(ptr, s + i, word_len);
+		ptr[word_len] = '\0';
+		s_ptr[j] = ptr;
+		i = i + word_len;
+		j++;
+	}
+	s_ptr[counter] = NULL;
+	return (s_ptr);
 }
