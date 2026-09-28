@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:59:32 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/27 10:45:53 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/28 10:57:47 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ static int	ft_word_len(char const *s, char c)
 	}
 	return (i);
 }
+static char *ft_word_dup(char const *s, char c)
+{
+	char	*word;
+	int		len;
+
+	len = ft_word_len(s, c);
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	ft_memcpy(word, s, len);
+	word[len] = '\0';
+	return (word);
+}
 
 static char	**ft_free_split(char **s_ptr, int j)
 {
@@ -60,32 +73,27 @@ static char	**ft_free_split(char **s_ptr, int j)
 
 char	**ft_split(char const *s, char c)
 {
-	char	*ptr;
 	char	**s_ptr;
 	int		counter;
-	int		word_len;
 	int		i;
 	int		j;
 
-	j = 0;
-	i = 0;
-	word_len = 0;
+	if (!s)
+		return (NULL);
 	counter = ft_word_count(s, c);
 	s_ptr = malloc(sizeof(char *) * (counter + 1));
 	if (!s_ptr)
 		return (NULL);
+	j = 0;
+	i = 0;
 	while (j < counter)
 	{
 		while (s[i] == c)
 			i++;
-		word_len = ft_word_len(s + i, c);
-		ptr = malloc(sizeof(char) * (word_len + 1));
-		if (!ptr)
+		s_ptr[j] = ft_word_dup(s + i, c);
+		if (!s_ptr[j])
 			return (ft_free_split(s_ptr, j));
-		ft_memcpy(ptr, s + i, word_len);
-		ptr[word_len] = '\0';
-		s_ptr[j] = ptr;
-		i = i + word_len;
+		i += ft_strlen(s_ptr[j]);
 		j++;
 	}
 	s_ptr[counter] = NULL;
