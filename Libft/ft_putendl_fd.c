@@ -6,13 +6,13 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:11:24 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/29 16:22:19 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/29 16:43:44 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -20,5 +20,5 @@ void ft_putendl_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
-    write(fd, "\n", 1);
+	write(fd, "\n", 1);
 }

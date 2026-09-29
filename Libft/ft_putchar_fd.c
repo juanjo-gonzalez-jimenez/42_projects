@@ -6,11 +6,11 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:00:46 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/29 16:06:50 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/29 16:42:53 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }

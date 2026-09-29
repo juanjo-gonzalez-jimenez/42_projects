@@ -6,13 +6,13 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:07:44 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/29 16:10:04 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/29 16:45:15 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')

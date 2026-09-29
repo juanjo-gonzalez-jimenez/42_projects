@@ -6,14 +6,14 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:23:52 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/29 16:30:51 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/29 16:43:01 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long number;
-	char c;
+	long	number;
+	char	c;
 
 	number = n;
 	if (number < 0)
