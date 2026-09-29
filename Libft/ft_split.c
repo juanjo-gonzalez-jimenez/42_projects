@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:59:32 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/28 10:57:47 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/29 11:00:50 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ static int	ft_word_len(char const *s, char c)
 	}
 	return (i);
 }
-static char *ft_word_dup(char const *s, char c)
+
+static char	*ft_word_dup(char const *s, char c)
 {
 	char	*word;
 	int		len;

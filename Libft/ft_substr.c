@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 11:25:53 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/24 12:59:55 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/09/29 11:01:34 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-    i = 0;
+	i = 0;
 	while (i < len)
 	{
 		ptr[i] = s[start + i];
 		i++;
 	}
-    ptr[i] = '\0';
+	ptr[i] = '\0';
 	return (ptr);
 }
