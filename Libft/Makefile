@@ -1,17 +1,19 @@
-NAME = ft_display_file
+NAME = libft.a
 
 CC = cc
 
 CFLAGS = -Werror -Wall -Wextra -I includes
 
-SRCS = ft_display_file.c
+SRCS = $(wildcard *.c)
 
 OBJS = $(SRCS:.c=.o)
+
+AR = ar rcs
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -21,5 +23,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+
+re: fclean all
 
 .PHONY: all clean fclean
