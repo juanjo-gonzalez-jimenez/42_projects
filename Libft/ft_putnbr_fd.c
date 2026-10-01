@@ -6,9 +6,11 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:23:52 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/29 16:43:01 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/01 11:51:34 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

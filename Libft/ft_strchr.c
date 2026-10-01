@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 09:59:44 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/23 14:25:57 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/01 11:58:12 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (*s == c)
+		if (s[i] == (char )c)
 		{
-			return ((char *)s);
+			return ((char *)s + i);
 		}
 		s++;
 	}

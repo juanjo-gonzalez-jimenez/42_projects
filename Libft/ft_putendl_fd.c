@@ -6,9 +6,11 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:11:24 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/29 16:43:44 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/01 11:51:29 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:27:28 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/23 15:53:14 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/01 11:56:01 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	mincount;
