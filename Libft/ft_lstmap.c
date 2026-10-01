@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 11:16:08 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/01 11:47:43 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/01 13:31:05 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 
 	head = NULL;
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (NULL);
 	while (lst != NULL)
 	{
