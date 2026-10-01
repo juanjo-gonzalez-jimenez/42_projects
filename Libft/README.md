@@ -8,9 +8,9 @@
 my own C library (`libft.a`) containing a set of functions that will be reused in later projects.
 
 This project is about understanding how the standard C functions actually work,
-doing them from scratch, and learning how to use them. The library is meant to be used throughout the cursus, so it is norm-compliant and easy to extend.
+doing them from scratch, and learning how to use them. The library is meant to be used throughout the cursus, so it is Norm-compliant and easy to extend.
 
-The library is split in three parts:
+The library is split into three parts:
 
 1. **Libc functions**: re-implementations of standard functions, same
    prototype and behavior stated in the manual, prefixed with `ft_`.
@@ -32,7 +32,7 @@ make re     # fclean + all
 
 ### Usage
 
-Include the header and you are good to go to use the functions inside the library:
+Include the header to use the library's functions:
 
 ```c
 #include "libft.h"
@@ -68,8 +68,6 @@ Notes:
 
 ### Part 2: Additional functions
 
-<!-- TODO: verify against your subject (this section was not in the provided excerpt). -->
-
 | Function | Description |
 |----------|-------------|
 | `ft_substr` | Returns a substring from a string. |
@@ -86,7 +84,7 @@ Notes:
 
 ### Part 3: Linked lists
 
-<!-- TODO: verify against your subject (this section was not in the provided excerpt). -->
+This is the struct used to build the list functions:
 
 ```c
 typedef struct s_list
@@ -110,18 +108,16 @@ typedef struct s_list
 
 ## Resources
 
-- `man` pages for each reimplemented function (`man 3 strlen`, etc.)
-- [The C Programming Language (K&R)](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+- `man` pages for each reimplemented function (`man strlen`, etc.)
 - [The 42 Norm](https://github.com/42School/norminette)
-- <!-- Add any tutorials, articles or videos you used -->
+- [Stack Overflow](https://stackoverflow.com/questions)
 
 ### Use of AI
 
-<!-- Be honest and specific: state which tasks AI was used for (e.g. understanding a concept,
-     explaining an error, reviewing edge cases) and for which parts it was NOT used.
-     Per the 42 AI guidelines, the code itself should be your own work and you must be able
-     to explain every line during peer evaluation. -->
+AI was used for:
+- Clarifying the multiple concepts around different types of functions.
+- Explaining errors and edge cases.
+- Giving ideas about how to approach the more difficult functions.
 
-AI was used for: <!-- e.g. clarifying concepts such as memory overlap in memmove -->
-
-AI was not used for: <!-- e.g. writing the function implementations -->
+AI was not used for:
+- Writing the function implementations.
