@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:01:55 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/09/21 18:51:06 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/02 11:33:40 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*srcptr;
 	size_t				i;
 
-	if (!dest && !src)
+	if (!dest || !src)
 		return (NULL);
 	destptr = (unsigned char *)dest;
 	srcptr = (const unsigned char *)src;
