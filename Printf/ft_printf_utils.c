@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 10:35:58 by vboxuser          #+#    #+#             */
-/*   Updated: 2026/10/07 16:36:35 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/07 16:51:58 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_print_str(char const *str)
 	int	i;
 
 	i = 0;
-	if (str == NULL)
+	if (!str)
 	{
 		write(1, "(null)", 6);
 		return (6);

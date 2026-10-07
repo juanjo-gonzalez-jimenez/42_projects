@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 10:35:46 by vboxuser          #+#    #+#             */
-/*   Updated: 2026/10/07 16:26:19 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/07 17:14:14 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_printf(char const *format, ...)
 	int		counter;
 	va_list	args;
 
+	if (!format)
+		return (-1);
 	i = 0;
 	counter = 0;
 	va_start(args, format);
@@ -56,8 +58,7 @@ int	ft_printf(char const *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			counter += ft_handle_format(format[i + 1], &args);
-			i = i + 2;
+			counter += ft_handle_format(format[(i += 2) - 1], &args);
 		}
 		else
 			counter += ft_print_char(format[i++]);
