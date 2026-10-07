@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+         #
+#    By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/01 16:28:57 by juan-jos          #+#    #+#              #
-#    Updated: 2026/10/05 10:23:09 by vboxuser         ###   ########.fr        #
+#    Updated: 2026/10/07 16:31:47 by juan-jos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC = cc
 CFLAGS = -Werror -Wall -Wextra
 
 SRCS =	ft_printf.c \
-		ft_printf_utils.c 
+		ft_printf_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
