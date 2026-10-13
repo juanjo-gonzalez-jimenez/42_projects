@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 15:30:42 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/13 16:05:30 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/13 16:20:18 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
     // 1. Characters (%c)
     printf("--- 1. Characters (%%c) ---\n");
     ret1 = printf("Original: [%c] [%c]\n", 'A', 'z');
-    ret2 = ft_printf("Custom:   [%c] [%c]\n", 'A', 'z');
+    ret2 = ft_printf("Custom:   [%c] [%c]\n%", 'A', 'z');
     printf("Return -> Original: %d | Custom: %d\n\n", ret1, ret2);
     
     // 2.5 Strings (%z)
