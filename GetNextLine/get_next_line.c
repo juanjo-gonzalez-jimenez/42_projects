@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 19:36:42 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/12 20:29:28 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/13 12:40:55 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,23 @@ char	*new_stash(char *stash)
 		i++;
 	if (stash[i] == '\n')
 		i++;
-    i = i + 1;
-    if (stash[i] == '\0')
-    {
-        free(stash);
-        return (NULL);
-    }
-    
-	ptr = malloc(sizeof(char) * (i + 1));
+	if (stash[i] == '\0')
+		return (free_null(stash));
+	ptr = malloc(sizeof(char) * ((stash_len(stash) - i) + 1));
 	if (!ptr)
-		return (NULL);
+		return (free_null(stash));
+	while (stash[i] != '\0')
+		ptr[j++] = stash[i++];
+	ptr[j] = '\0';
+	free(stash);
+	return (ptr);
+}
+char	*reader(int fd, static char *stash)
+{
+	char *buf;
+	ssize_t bytes;
+
+	bytes = 1;
 }
 
 char	*get_next_line(int fd)
@@ -88,14 +95,23 @@ char	*get_next_line(int fd)
 			buf[bytes] = '\0';
 			stash = stash_join(stash, buf);
 			if (stash == NULL)
-			{
-				free(buf);
-				return (NULL);
-			}
+				return (free_null(buf));
 		}
 	}
 	free(buf);
-	if (stash == NULL)
+	if (stash == NULL || stash[0] == '\0')
+	{
+		free(stash);
+		stash = NULL;
 		return (NULL);
+	}
 	line = extract_line(stash);
+	if (line == NULL)
+	{
+		free(stash);
+		stash = NULL;
+		return (NULL);
+	}
+	stash = new_stash(stash);
+	return (line);
 }

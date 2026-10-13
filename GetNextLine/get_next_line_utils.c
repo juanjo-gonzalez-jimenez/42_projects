@@ -6,11 +6,17 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 11:31:15 by vboxuser          #+#    #+#             */
-/*   Updated: 2026/10/12 17:52:12 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/13 12:20:32 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*free_null(char *ptr)
+{
+	free(ptr);
+	return (NULL);
+}
 
 int stash_checker(char *stash)
 {
