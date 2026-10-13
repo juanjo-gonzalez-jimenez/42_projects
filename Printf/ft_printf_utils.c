@@ -6,11 +6,11 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 10:35:58 by vboxuser          #+#    #+#             */
-/*   Updated: 2026/10/07 16:51:58 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/13 15:17:50 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_print_char(char c)
 {
