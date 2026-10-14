@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 11:31:15 by vboxuser          #+#    #+#             */
-/*   Updated: 2026/10/13 12:20:32 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/14 16:52:22 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,39 +18,39 @@ char	*free_null(char *ptr)
 	return (NULL);
 }
 
-int stash_checker(char *stash)
+int	stash_checker(char *stash)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (stash == NULL)
-        return (0);
-    while (stash[i] != '\0')
-    {
-        if (stash[i] == '\n')
-            return (1);
-        i++;
-    }
-    return (0);
+	i = 0;
+	if (stash == NULL)
+		return (0);
+	while (stash[i] != '\0')
+	{
+		if (stash[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-size_t     stash_len(char *s)
+size_t	stash_len(char *s)
 {
-    size_t i;
-    
-    i = 0;
-    if (s == NULL)
-        return (0);
-    while (s[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	size_t	i;
+
+	i = 0;
+	if (s == NULL)
+		return (0);
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-char    *stash_join(char *s1, char *s2)
+char	*stash_join(char *s1, char *s2)
 {
-    char	*ptr;
+	char	*ptr;
 	size_t	i;
 	size_t	j;
 
@@ -58,10 +58,10 @@ char    *stash_join(char *s1, char *s2)
 		return (NULL);
 	ptr = malloc(sizeof(char) * (stash_len(s1) + stash_len(s2) + 1));
 	if (!ptr)
-    {
-        free(s1);
+	{
+		free(s1);
 		return (NULL);
-    }
+	}
 	i = 0;
 	while (s1 != NULL && s1[i] != '\0')
 	{
@@ -72,6 +72,6 @@ char    *stash_join(char *s1, char *s2)
 	while (s2[j] != '\0')
 		ptr[i++] = s2[j++];
 	ptr[i] = '\0';
-    free(s1);
+	free(s1);
 	return (ptr);
 }

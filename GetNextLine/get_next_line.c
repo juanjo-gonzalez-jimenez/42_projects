@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 19:36:42 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/13 12:46:15 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/14 16:54:42 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ char	*new_stash(char *stash)
 	free(stash);
 	return (ptr);
 }
+
 char	*reader(int fd, char *stash)
 {
-	char *buf;
-	ssize_t bytes;
+	char	*buf;
+	ssize_t	bytes;
 
 	bytes = 1;
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -92,7 +93,7 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*stash;
-	
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = reader(fd, stash);
