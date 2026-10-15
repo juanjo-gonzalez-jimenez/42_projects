@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 11:30:53 by vboxuser          #+#    #+#             */
-/*   Updated: 2026/10/14 16:15:49 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/15 12:07:17 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <unistd.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-# endif
-# ifndef FD_ARRAY
-#  define FD_ARRAY 1024
 # endif
 /*Function Prototypes*/
 char	*get_next_line(int fd);

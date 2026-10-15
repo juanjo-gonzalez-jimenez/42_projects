@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 19:36:42 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/14 16:55:00 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/15 12:08:23 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ char	*reader(int fd, char *stash)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stash[FD_ARRAY];
+	static char	*stash[1024];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= FD_ARRAY)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
 		return (NULL);
 	stash[fd] = reader(fd, stash[fd]);
 	if (stash[fd] == NULL || stash[fd][0] == '\0')
