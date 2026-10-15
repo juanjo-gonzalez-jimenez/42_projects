@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 10:12:46 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/15 10:49:25 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/15 13:04:12 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	main(int argv, char **argc)
 			while ((line = get_next_line(fd)) != NULL)
 			{
 				printf("%s", line);
+                //printf("\n");
 				free(line);
 			}
             close(fd);
-            printf("\n");
             i++;
 		}
 	}
