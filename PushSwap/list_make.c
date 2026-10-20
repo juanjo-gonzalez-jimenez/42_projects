@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 16:19:31 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/20 18:48:54 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/20 20:05:43 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int	main(int argc, char **argv)
 {
 	t_node *head;
 	t_node *current;
+	t_node *last;
+	t_node *temp;
 	int i;
 
 	if (argc < 2)
@@ -60,14 +62,21 @@ int	main(int argc, char **argv)
 		ft_add_node_back(&head, new_node);
 		i++;
 	}
+	last = head;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = head;
+	head->prev = last;
 	current = head;
-	while (current != NULL)
+	while (current)
 	{
 		printf("%d", current->value);
 		printf("\n");
 		current = current->next;
+		if (current == head)
+			break;
 	}
-	t_node *temp;
+	last->next = NULL;
 	while (head != NULL)
 	{
 		temp = head;
