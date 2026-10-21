@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 16:19:31 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/20 20:05:43 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/21 18:17:28 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,40 +33,24 @@ void	ft_add_node_back(t_node **lst, t_node *new)
 		return ;
 	if (*lst == NULL)
 	{
+		new->next = new;
+		new->prev = new;
 		*lst = new;
 		return ;
 	}
-	node = *lst;
-	while (node->next != NULL)
-		node = node->next;
-	node->next = new;
+	node = (*lst)->prev;
 	new->prev = node;
+	new->next = *lst;
+	node->next = new;
+	(*lst)->prev = new;
 }
 
-int	main(int argc, char **argv)
+void	print_list(t_node *head)
 {
-	t_node *head;
-	t_node *current;
-	t_node *last;
-	t_node *temp;
-	int i;
+	t_node	*current;
 
-	if (argc < 2)
-		return (0);
-	head = NULL;
-	i = 1;
-	while (i < argc)
-	{
-		int value = ft_atoi(argv[i]);
-		t_node *new_node = ft_create_node(value);
-		ft_add_node_back(&head, new_node);
-		i++;
-	}
-	last = head;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = head;
-	head->prev = last;
+	if (!head)
+		return ;
 	current = head;
 	while (current)
 	{
@@ -74,14 +58,24 @@ int	main(int argc, char **argv)
 		printf("\n");
 		current = current->next;
 		if (current == head)
-			break;
+			break ;
 	}
-	last->next = NULL;
-	while (head != NULL)
+}
+
+void	free_list(t_node **head)
+{
+	t_node	*temp;
+	t_node	*next_node;
+
+	if (!head || !*head)
+		return ;
+	(*head)->prev->next = NULL;
+	temp = *head;
+	while (temp != NULL)
 	{
-		temp = head;
-		head = head->next;
+		next_node = temp->next;
 		free(temp);
+		temp = next_node;
 	}
-	return (0);
+	*head = NULL;
 }
