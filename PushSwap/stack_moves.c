@@ -6,7 +6,7 @@
 /*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 18:17:01 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/21 18:41:35 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/22 10:56:53 by juan-jos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,16 @@ void    swap(t_node **stack)
 void    push(t_node **src_stack, t_node **dest_stack)
 {
     t_node *src_head;
-    if (!*src_stack)
+    if (!src_stack || !*src_stack || !dest_stack)
         return ;
     src_head = *src_stack;
+    if ((*src_stack)->next == *src_stack)
+        *src_stack = NULL;
+    else{
+        src_head->prev->next = src_head->next;
+        src_head->next->prev = src_head->prev;
+        *src_stack = src_head->next;
+    }
+    ft_add_node_back(dest_stack, src_head);
+    *dest_stack = src_head;
 }

@@ -6,35 +6,44 @@
 #    By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/01 16:28:57 by juan-jos          #+#    #+#              #
-#    Updated: 2026/10/20 18:46:17 by juan-jos         ###   ########.fr        #
+#    Updated: 2026/10/22 11:33:35 by juan-jos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = push_swap
 
 CC = cc
 
 CFLAGS = -Werror -Wall -Wextra
 
-SRCS =	
+LIBFT_DIR = libft
+
+LIBFT = $(LIBFT_DIR)/libft.a
+
+SRCS =	list_make.c \
+		main.c \
+		stack_moves.c
 
 OBJS = $(SRCS:.c=.o)
 
-AR = ar rcs
-
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+%.o: %.c push_swap.h
+	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
+	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
