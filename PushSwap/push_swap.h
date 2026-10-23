@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 16:23:54 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/23 10:36:38 by vboxuser         ###   ########.fr       */
+/*   Updated: 2026/10/23 15:24:00 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,6 @@ void	rr(t_data *data);
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);
+int	init_data(t_data *data);
+int	record(t_data *data, t_op op);
 #endif

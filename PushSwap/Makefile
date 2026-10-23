@@ -6,7 +6,7 @@
 #    By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/01 16:28:57 by juan-jos          #+#    #+#              #
-#    Updated: 2026/10/23 10:20:23 by vboxuser         ###   ########.fr        #
+#    Updated: 2026/10/23 13:31:47 by vboxuser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,9 @@ SRCS =	list_make.c \
 		main.c \
 		stack_moves.c \
 		ops_swap_push.c \
-		ops_rotate \
-		ops_rev_rotate
+		ops_rotate.c \
+		ops_rev_rotate.c \
+		record.c
 
 OBJS = $(SRCS:.c=.o)
 
