@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+         #
+#    By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/01 16:28:57 by juan-jos          #+#    #+#              #
-#    Updated: 2026/10/22 11:33:35 by juan-jos         ###   ########.fr        #
+#    Updated: 2026/10/23 10:20:23 by vboxuser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS =	list_make.c \
 		main.c \
-		stack_moves.c
+		stack_moves.c \
+		ops_swap_push.c \
+		ops_rotate \
+		ops_rev_rotate
 
 OBJS = $(SRCS:.c=.o)
 
