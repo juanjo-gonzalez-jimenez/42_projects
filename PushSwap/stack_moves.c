@@ -6,43 +6,46 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 18:17:01 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/23 10:31:26 by vboxuser         ###   ########.fr       */
+/*   Updated: 2026/10/25 12:35:59 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_node **stack)
+int	rotate(t_node **stack)
 {
-	if (!stack || !*stack)
-		return ;
+	if (!stack || !*stack || (*stack)->next == *stack)
+		return (0);
 	*stack = (*stack)->next;
+	return (1);
 }
 
-void	rev_rotate(t_node **stack)
+int	rev_rotate(t_node **stack)
 {
-	if (!stack || !*stack)
-		return ;
+	if (!stack || !*stack || (*stack)->next == *stack)
+		return (0);
 	*stack = (*stack)->prev;
+	return (1);
 }
 
-void	swap(t_node **stack)
+int	swap(t_node **stack)
 {
 	int	temp;
 
-	if (!stack || !*stack)
-		return ;
+	if (!stack || !*stack || (*stack)->next == *stack)
+		return (0);
 	temp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
 	(*stack)->next->value = temp;
+	return (1);
 }
 
-void	push(t_node **src_stack, t_node **dest_stack)
+int	push(t_node **src_stack, t_node **dest_stack)
 {
 	t_node	*src_head;
 
 	if (!src_stack || !*src_stack || !dest_stack)
-		return ;
+		return (0);
 	src_head = *src_stack;
 	if ((*src_stack)->next == *src_stack)
 		*src_stack = NULL;
@@ -54,4 +57,5 @@ void	push(t_node **src_stack, t_node **dest_stack)
 	}
 	ft_add_node_back(dest_stack, src_head);
 	*dest_stack = src_head;
+	return (1);
 }

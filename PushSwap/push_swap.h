@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 16:23:54 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/23 15:24:00 by vboxuser         ###   ########.fr       */
+/*   Updated: 2026/10/25 12:38:37 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ t_node	*ft_create_node(int value);
 void	ft_add_node_back(t_node **lst, t_node *new);
 void	print_list(t_node *head);
 void	free_list(t_node **head);
-void	rotate(t_node **stack);
-void	rev_rotate(t_node **stack);
-void	swap(t_node **stack);
-void	push(t_node **src_stack, t_node **dest_stack);
+int		rotate(t_node **stack);
+int		rev_rotate(t_node **stack);
+int		swap(t_node **stack);
+int		push(t_node **src_stack, t_node **dest_stack);
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
@@ -66,6 +66,8 @@ void	rr(t_data *data);
 void	rra(t_data *data);
 void	rrb(t_data *data);
 void	rrr(t_data *data);
-int	init_data(t_data *data);
-int	record(t_data *data, t_op op);
+int		init_data(t_data *data);
+int		record(t_data *data, t_op op);
+void	print_ops(t_data *data);
+void	free_all(t_data *data);
 #endif

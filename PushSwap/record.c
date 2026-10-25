@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 13:24:24 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/23 15:33:15 by vboxuser         ###   ########.fr       */
+/*   Updated: 2026/10/25 11:43:05 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,32 @@ int	record(t_data *data, t_op op)
     data->ops[data->n_ops] = op;
     data->n_ops++;
 	return (1);
+}
+
+void	print_ops(t_data *data)
+{
+	static char *table[] = {"sa","sb","ss","pa","pb","ra","rb",
+							"rr","rra","rrb","rrr"};
+	int i;
+	
+	if (!data)
+		return ;
+	i = 0;
+	while (i < data->n_ops)
+	{
+		ft_putendl_fd(table[data->ops[i]], 1);
+		i++;
+	}
+}
+
+void	free_all(t_data *data)
+{
+	if (!data)
+		return ;
+	free_list(&data->stack_a);
+	free_list(&data->stack_b);
+	free(data->ops);
+	data->ops = NULL;
+	data->n_ops = 0;
+	data->capacity = 0;
 }
