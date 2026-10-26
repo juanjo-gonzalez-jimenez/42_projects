@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-jos <juan-jos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 18:17:19 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/22 11:39:29 by juan-jos         ###   ########.fr       */
+/*   Updated: 2026/10/26 18:03:13 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,33 +60,23 @@ void	print_stack_rev(char *label, t_node *head)
 
 int	main(int argc, char **argv)
 {
-	t_node *head_a;
-	t_node *head_b;
-	int i;
+	t_data	data;
 
 	if (argc < 2)
 		return (0);
-	head_a = NULL;
-	head_b = NULL;
-	i = 1;
-	while (i < argc)
+	if (!init_data(&data))
 	{
-		int value = ft_atoi(argv[i]);
-		t_node *new_node = ft_create_node(value);
-		if (!new_node)
-		{
-			free_list(&head_a);
-			return (1);
-		}
-		ft_add_node_back(&head_a, new_node);
-		i++;
+		ft_putstr_fd("Error\n", 2);
+		return (1);
 	}
-	swap(&head_a);
-	print_stack("a", head_a);
-	print_stack("b", head_b);
-	swap(&head_a);
-	print_stack("a", head_a);
-	print_stack("b", head_b);
-	free_list(&head_a);
+	if (!parse_args(argc, argv, &data))
+	{
+		free_all(&data);
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
+	print_stack("a", data.stack_a);
+	print_stack("b", data.stack_b);
+	free_all(&data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 16:23:54 by juan-jos          #+#    #+#             */
-/*   Updated: 2026/10/25 12:38:37 by vboxuser         ###   ########.fr       */
+/*   Updated: 2026/10/26 17:55:04 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include "libft.h"
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -70,4 +71,5 @@ int		init_data(t_data *data);
 int		record(t_data *data, t_op op);
 void	print_ops(t_data *data);
 void	free_all(t_data *data);
+int		parse_args(int argc, char **argv, t_data *data);
 #endif
