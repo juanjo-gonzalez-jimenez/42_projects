@@ -55,6 +55,7 @@ class Plant:
 
         return self._age_days
 
+
 class Flower(Plant):
 
     def __init__(self, name: str, height: float, age_days: int,
@@ -84,11 +85,13 @@ class Tree(Plant):
 
     def produce_shade(self) -> None:
         print(f"Tree {self._name} now produces a shade of ", end="")
-        print(f"{self._height}cm long and {self.trunk_diameter}cm wide")
+        print(f"{round(self.get_height(), 1)}cm long and ", end="")
+        print(f"{self.trunk_diameter}cm wide")
 
     def show(self) -> None:
         super().show()
         print(f"Trunk diameter: {self.trunk_diameter}cm")
+
 
 class Vegetable(Plant):
 
@@ -131,7 +134,7 @@ if __name__ == "__main__":
     print("=== Vegetable")
     tomato.show()
     print("[make tomato grow and age for 20 days]")
-    for days in range(1, 21):
+    for _ in range(20):
         tomato.age()
         tomato.grow()
     tomato.show()
