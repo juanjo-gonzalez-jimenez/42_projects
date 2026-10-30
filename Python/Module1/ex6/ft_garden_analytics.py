@@ -144,7 +144,7 @@ class Tree(Plant):
                  growth_rate: float, trunk_diameter: float) -> None:
         super().__init__(name, height, age_days, growth_rate)
         self.trunk_diameter = trunk_diameter
-        self._stats = self._Stats_Tree()
+        self._stats: Tree._Stats_Tree = self._Stats_Tree()
 
     class _Stats_Tree(Plant._Stats):
 
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     rose.show()
     print(f"[statistics for {rose.get_name()}]")
     rose._stats.print_stats()
-    print(f"[asking the rose to grow and bloom]")
+    print("[asking the rose to grow and bloom]")
     rose.grow(8.0)
     rose.bloom()
     rose.show()
