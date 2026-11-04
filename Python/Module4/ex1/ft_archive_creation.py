@@ -11,59 +11,57 @@ def open_file() -> typing.IO[str] | None:
         return None
     return file
 
-def file_manager() -> None:
 
-    file = open_file()
-    if file is not None:
-        text = file.read()        
-        print("---")
-        print()
-        print(text)
-        print("---")
+def read_content(file: typing.IO[str]) -> str:
+    try:
+        return file.read()
+    finally:
         file.close()
-        print(f"File '{sys.argv[1]}' closed.")
 
 
-def file_transform() -> str:
+def display_content(text: str) -> None:
+    print("---")
+    print(text, end="")
+    print("---")
 
-    file_text = ""
-    file = open_file()
-    if file is not None:
-        text = file.read()
-        print("Transform data:")
-        print("---")
-        print()
-        for line in text.splitlines():
-            print(line + "#")
-            file_text += line + "#" +"\n"
-        print()
-        print("---")
-        file.close()
-    if file_text and file_text[-1] == "\n":
-        file_text = file_text[:-1]
-    return file_text
+
+def transform_content(text: str) -> str:
+    result = ""
+    for line in text.splitlines():
+        result += line + "#\n"
+    return result
+
+
+def save_content(name: str, content: str) -> None:
+    print(f"Saving data to '{name}'")
+    try:
+        new_file: typing.IO[str] = open(name, "w")
+        if content:
+            content = content[:-1]
+        new_file.write(content)
+        new_file.close()
+        print(f"Data saved in file '{name}'.")
+    except OSError as e:
+        print(f"Error opening the file: {e}")
 
 
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
-        print("Usage: ft_ancient_text.py <file>")
+        print(f"Usage: {sys.argv[0]}")
     else:
-        print("=== Cyber Archives Recovery ===")
+        print("=== Cyber Archives Recovery & Preservation ===")
         print(f"Accessing file '{sys.argv[1]}'")
         file = open_file()
-        file_manager()
-        print()
-        file_text = file_transform()
-        name = input("Enter new file name (or empty): ")
-        if name == "":
-            print("Not saving data.")
-        else:
-            print(f"Saving data to '{name}'")
-            try:
-                new_file: typing.IO[str] = open(name, "w")
-                new_file.write(file_text)
-                new_file.close()
-                print(f"Data saved in file '{name}'.")
-            except OSError as e:
-                print(f"Error opening the file: {e}")
+        if file is not None:
+            text = read_content(file)
+            display_content(text)
+            print(f"File '{sys.argv[1]}' closed.")
+            new_text = transform_content(text)
+            print("Transform data:")
+            display_content(new_text)
+            name = input("Enter new file name (or empty): ")
+            if name == "":
+                print("Not saving data.")
+            else:
+                save_content(name, new_text)

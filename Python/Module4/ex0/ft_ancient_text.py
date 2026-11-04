@@ -1,6 +1,7 @@
 import sys
 import typing
 
+
 def open_file() -> typing.IO[str] | None:
 
     try:
@@ -9,6 +10,7 @@ def open_file() -> typing.IO[str] | None:
         print(f"Error opening file '{sys.argv[1]}': {e}")
         return None
     return file
+
 
 if __name__ == "__main__":
 
@@ -19,7 +21,7 @@ if __name__ == "__main__":
         print(f"Accessing file '{sys.argv[1]}'")
         file = open_file()
         if file is not None:
-            text = file.read()        
+            text = file.read()
             print("---")
             print()
             print(text)
