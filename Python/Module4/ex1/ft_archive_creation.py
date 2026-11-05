@@ -13,6 +13,7 @@ def open_file() -> typing.IO[str] | None:
 
 
 def read_content(file: typing.IO[str]) -> str:
+
     try:
         return file.read()
     finally:
@@ -20,12 +21,14 @@ def read_content(file: typing.IO[str]) -> str:
 
 
 def display_content(text: str) -> None:
+
     print("---")
     print(text, end="")
     print("---")
 
 
 def transform_content(text: str) -> str:
+
     result = ""
     for line in text.splitlines():
         result += line + "#\n"
@@ -33,6 +36,7 @@ def transform_content(text: str) -> str:
 
 
 def save_content(name: str, content: str) -> None:
+
     print(f"Saving data to '{name}'")
     try:
         new_file: typing.IO[str] = open(name, "w")
