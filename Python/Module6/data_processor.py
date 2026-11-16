@@ -26,8 +26,24 @@ class DataProcessor(abc.ABC):
 
 class NumericProcessor(DataProcessor):
 
-    def __init__(self):
-        super().__init__()
+    def validate(self, data) -> bool:
+
+        if data is int or float:
+            return True
+        if data is list:
+            for i in data:
+                if i is not int or not float:
+                    return False
+        return False
+
+    def ingest(self, data: int | float | list[int | float]) -> None:
+
+        if self.validate is False:
+            raise ValueError("Imprper numeric data")
+        if data is list:
+            for item in data:
+                self._data.str
+        
 
 class TextProcessor(DataProcessor):
 
