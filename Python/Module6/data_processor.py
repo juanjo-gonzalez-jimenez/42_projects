@@ -25,6 +25,7 @@ class DataProcessor(abc.ABC):
         self._rank += 1
         return (rank, value)
 
+
 class NumericProcessor(DataProcessor):
 
     def validate(self, data: typing.Any) -> bool:
@@ -47,7 +48,7 @@ class NumericProcessor(DataProcessor):
                 self._data.append(str(item))
         else:
             self._data.append(str(data))
-        
+
 
 class TextProcessor(DataProcessor):
 
@@ -71,6 +72,7 @@ class TextProcessor(DataProcessor):
                 self._data.append(item)
         else:
             self._data.append(data)
+
 
 class LogProcessor(DataProcessor):
 
